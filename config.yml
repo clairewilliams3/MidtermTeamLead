@@ -1,0 +1,6 @@
+data: all_data
+
+datasets:
+  obese_data: "./data/obese_data.csv"
+  not_obese_data: "./data/not_obese_data.csv"
+  all_data: "./data/all_data.csv"
