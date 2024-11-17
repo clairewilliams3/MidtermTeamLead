@@ -85,7 +85,7 @@ all_multinomial_tables_combined <- list(
 )
 
 saveRDS(
-  all_multinomial_tables,
+  all_multinomial_tables_combined,
   file = here::here("output/all_multinomial_tables_combined.rds")
 )
 
@@ -99,7 +99,7 @@ summary(model_not_obese)
 
 # Extract coefficients for both models
 coef_obese <- summary(model_obese)$coefficients
-coef_non_obese <- summary(model_not_obese)$coefficients
+coef_not_obese <- summary(model_not_obese)$coefficients
 
 # Odds ratios for both models
 or_obese <- exp(coef(model_obese))
