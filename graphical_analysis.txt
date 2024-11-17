@@ -1,0 +1,12 @@
+# graphical_analysis
+
+-graphical_analysis_fig1: Age Density Distribution by Sex
+-Summary: This figure shows the age density distribution by gender. The x-axis represents age, and the y-axis represents density. The orange color represents females, and the pink color represents males. The age density distribution is right-skewed, meaning most of the samples are in the younger age range, and the density decreases as age increases. This indicates that there are more young people in the data, and the number of samples decreases as age goes up. In the younger age range (about 0 to 25 years) and the older age range (about 75 years and above), the density difference between males and females is small. In the middle age range (25-60 years), the density for females is slightly higher than for males, especially around 20 to 40 years, suggesting that there are relatively more females in this age range. Both males and females have the highest density around age 20, which is the age range with the most concentration in the data.
+
+-graphical_analysis_fig2: Age Distribution by Classification and Sex
+-Summary:  This figure shows the age distribution by COVID test findings (Classification) and gender. Classifications 1 to 3 indicate different degrees of COVID diagnosis, while 4 or higher means non-COVID or inconclusive results. For COVID-positive cases (1 to 3), both genders have similar age distributions with median ages around 50, except for classification 2, where males show a slightly higher median age and wider age range, suggesting a higher representation of older males in moderate COVID cases. In non-COVID or inconclusive cases (4 to 7), the age distribution is similar for both genders, indicating no significant age difference between males and females in these groups.
+
+-graphical_analysis_fig3: Stacked Bar Chart of Obesity and Classification
+-Summary: This stacked bar chart shows the distribution of obesity status across different COVID classifications. From the chart, we see that classifications 3 and 6 have the highest counts. In these groups, most individuals are non-obese (yellow). Obese individuals (pink) are present in all classifications, but in lower numbers compared to non-obese individuals. Among COVID-positive classifications (1 to 3), there are relatively fewer individuals, and most are also non-obese. Missing data (gray) is minimal across all classifications.
+
+
