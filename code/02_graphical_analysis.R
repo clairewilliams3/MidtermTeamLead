@@ -1,7 +1,9 @@
 library(here)
-here::i_am("02_graphical_analysis.R")
+here::i_am("code/02_graphical_analysis.R")
 
-data=read.csv(file=here::here(“data/all_data.csv”))
+data <- read.csv(
+  file=here::here("data/all_data.csv")
+)
 
 library(ggplot2)
 
