@@ -10,21 +10,22 @@
 
   - Michelle
   - introduces the data
-  - creates a data summary in .txt file
-  - saves demographic table as a `.png` object in `output/` folder
+  - saves demographic table as a `.rds` object in `output/` folder
   
 `code/02_graphical_analysis.R`
 
   - Linlin
   - descriptive graphical analysis
   - saves plots as  `.png` objects in `output/` folder
-  - summarizes plots in a .txt file
   
 `code/03_modeling.R`
 
   - Jiani & Mileati
-  - modeling the data, classification vs sex and age
-  - saves plot that graphically displays the model as `.png` object in the `output/` folder
+  - modeling the data
+  - saves models as `.rds` object in `output/` folder 
+  - saves all multinomial table as `.rds` file in `output/` folder
+  - saves combined table as `.rds` object in `output/` folder
+  - saves aic results table as `.rds` object in the `output/` folder
 
 `code/04_render_report.R`
 
@@ -32,8 +33,8 @@
 
 `midterm_report.Rmd`
 
-  - makes the demographic table, graphical analysis, and the model plot
-  - team lead copies descriptions from text files and pastes them where they belong
+  - makes and organizes all objects 
+  - text descriptions are inserted where they belong
 
 `Makefile`
 
