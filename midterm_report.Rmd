@@ -18,6 +18,11 @@ all_data <- read.csv(
   file = here::here("data/all_data.csv")
 )
 
+#Load the Table 1
+demographic_table <- readRDS(
+  here::here("output/demographic_table.rds")
+)
+
 obese_data <- read.csv(
   file = here::here("data/obese_data.csv")
 )
