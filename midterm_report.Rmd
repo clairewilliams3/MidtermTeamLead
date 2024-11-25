@@ -6,13 +6,13 @@ output: html_document
 ---
 
 
-```{r, read-config}
+```{r, read-config, echo=FALSE}
 config <- config::get()
 ```
 
+# Data Summary
 
-
-```{r, load-data}
+```{r, load-data, echo=FALSE}
 here::i_am("midterm_report.Rmd")
 all_data <- read.csv(
   file = here::here("data/all_data.csv")
@@ -22,6 +22,7 @@ all_data <- read.csv(
 demographic_table <- readRDS(
   here::here("output/demographic_table.rds")
 )
+demographic_table
 
 obese_data <- read.csv(
   file = here::here("data/obese_data.csv")
@@ -32,25 +33,53 @@ not_obese_data <- read.csv(
 )
 ```
 
+# Graphical Analysis
+
+## Figure 1
+
+```{r, echo=FALSE}
+fig1_path <- here::here("output/graphical_analysis_fig1.png")
+include_graphics(fig1_path)
+```
+
+## Figure 2
+
+```{r, echo=FALSE}
+fig2_path <- here::here("output/graphical_analysis_fig2.png")
+include_graphics(fig2_path)
+```
+
+## Figure 3
+
+```{r, echo=FALSE}
+fig3_path <- here::here("output/graphical_analysis_fig3.png")
+include_graphics(fig3_path)
+```
 
 
+# Modeling
 
 
+## Part 1
 
-
-
-
-
-
-
-
-
-
-# All Multinomial model output table
-```{r, all_multinomial_tables_combined}
+```{r, all_multinomial_tables_combined, echo=FALSE}
 all_multinomial_tables_combined<- readRDS(
   file = here::here("output/all_multinomial_tables_combined.rds")
 )
 all_multinomial_tables_combined
+```
+
+## Part 2
+
+```{r, echo=FALSE}
+combined_tables <- readRDS(
+  file = here::here("output/combined_table.rds")
+)
+combined_tables
+
+aic_results <- readRDS(
+  file = here::here("output/aic_results.rds")
+)
+aic_results
 ```
 
