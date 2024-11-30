@@ -7,30 +7,33 @@ data <- read.csv(
 
 library(ggplot2)
 
-fig1=ggplot(data, aes(x = age, color = factor(sex), fill = factor(sex))) +
+fig1=ggplot(data, aes(x = AGE, color = factor(SEX), fill = factor(SEX))) +
   geom_density(alpha = 0.4) +
   labs(x = "Age", y = "Density", title = "Age Density Distribution by Sex") +
   theme_minimal() +
   scale_fill_manual(values = c("blue", "pink")) +  
-  scale_color_manual(values = c("blue", "pink"))   
+  scale_color_manual(values = c("blue", "pink"))
 
-ggplot2::ggsave(
-  fig1, 
-  file = here::here("output/graphical_analysis_fig1.png")
+saveRDS(
+  fig1,
+  file = here::here("output", "graphical_analysis_fig1.rds")
 )
 
-fig2=ggplot(data, aes(x = factor(classification), y = age, fill = factor(sex))) +
+
+fig2=ggplot(data, aes(x = factor(CLASIFFICATION_FINAL), y = AGE, fill = factor(SEX))) +
   geom_boxplot() +
   labs(x = "Classification", y = "Age", 
        title = "Age Distribution by Classification and Sex") +
   theme_minimal()
 
-ggplot2::ggsave(
-  fig2, 
-  file = here::here("output/graphical_analysis_fig2.png")
+
+saveRDS(
+  fig2,
+  file = here::here("output", "graphical_analysis_fig2.rds")
 )
 
-fig3=ggplot(data, aes(x = CLASIFICATION_FINAL, fill = OBESITY)) +
+
+fig3=ggplot(data, aes(x = CLASIFFICATION_FINAL, fill = OBESITY)) +
   geom_bar() +
   labs(
     title = "Stacked Bar Chart of Obesity and Classification",
@@ -40,8 +43,7 @@ fig3=ggplot(data, aes(x = CLASIFICATION_FINAL, fill = OBESITY)) +
   ) +
   theme_minimal()
 
-ggplot2::ggsave(
-  fig3, 
-  file = here::here("output/graphical_analysis_fig3.png")
+saveRDS(
+  fig3,
+  file = here::here("output", "graphical_analysis_fig3.rds")
 )
-

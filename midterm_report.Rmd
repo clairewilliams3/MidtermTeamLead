@@ -38,22 +38,28 @@ not_obese_data <- read.csv(
 ## Figure 1
 
 ```{r, echo=FALSE}
-fig1_path <- here::here("output/graphical_analysis_fig1.png")
-include_graphics(fig1_path)
+graphical_analysis_fig1 <- readRDS(
+  here::here("output/graphical_analysis_fig1.rds")
+)
+graphical_analysis_fig1
 ```
 
 ## Figure 2
 
 ```{r, echo=FALSE}
-fig2_path <- here::here("output/graphical_analysis_fig2.png")
-include_graphics(fig2_path)
+graphical_analysis_fig2 <- readRDS(
+  here::here("output/graphical_analysis_fig2.rds")
+)
+graphical_analysis_fig2
 ```
 
 ## Figure 3
 
 ```{r, echo=FALSE}
-fig3_path <- here::here("output/graphical_analysis_fig3.png")
-include_graphics(fig3_path)
+graphical_analysis_fig3 <- readRDS(
+  here::here("output/graphical_analysis_fig3.rds")
+)
+graphical_analysis_fig3
 ```
 
 
