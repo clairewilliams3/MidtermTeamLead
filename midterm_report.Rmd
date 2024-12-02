@@ -6,10 +6,6 @@ output: html_document
 ---
 
 
-```{r, read-config, echo=FALSE}
-config <- config::get()
-```
-
 # Data Summary
 
 Our team will be exploring the COVID-19 Database in Mexico:
