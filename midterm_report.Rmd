@@ -12,7 +12,42 @@ config <- config::get()
 
 # Data Summary
 
-```{r, load-data, echo=FALSE}
+Our team will be exploring the COVID-19 Database in Mexico:
+
+* This anonymized patient-related dataset was provided by Mexico's 
+Epidemiological Surveillance System for Viral Respiratory Diseases at 
+the Ministry of Health.
+* The full raw dataset contained 1,048,576 unique patients and 21 unique 
+features (variables): 
+
+  * sex: 1 for female and 2 for male.
+  * age: of the patient.
+  * classification: covid test findings. Values 1-3 mean that the patient was 
+  * diagnosed with covid in different degrees. 4 or higher means that the 
+  * patient is not a carrier of covid or that the test is inconclusive.
+  * patient type: type of care the patient received in the unit.
+  * pneumonia: whether the patient already have air sacs inflammation or not.
+  * pregnancy: whether the patient is pregnant or not.
+  * diabetes: whether the patient has diabetes or not.
+  * copd: Indicates whether the patient has Chronic obstructive pulmonary disease or not.
+  * asthma: whether the patient has asthma or not.
+  * inmsupr: whether the patient is immunosuppressed or not.
+  * hypertension: whether the patient has hypertension or not.
+  * cardiovascular: whether the patient has heart or blood vessels related disease.
+  * renal chronic: whether the patient has chronic renal disease or not.
+  * other disease: whether the patient has other disease or not.
+  * obesity: whether the patient is obese or not.
+  * tobacco: whether the patient is a tobacco user.
+  * usmr: Indicates whether the patient treated medical units of the first, second or third level.
+  * medical unit: type of institution of the National Health System that provided the care.
+  * intubed: whether the patient was connected to the ventilator.
+  * icu: Indicates whether the patient had been admitted to an Intensive Care Unit.
+  * date died: If the patient died indicate the date of death, and NA otherwise.
+  
+* With these variables we will be exploring the variable Obesity as our 
+parameter in relation to COVID-19
+
+```{r, load-data, echo=FALSE, warning=FALSE, message=FALSE}
 here::i_am("midterm_report.Rmd")
 all_data <- read.csv(
   file = here::here("data/all_data.csv")
@@ -37,21 +72,25 @@ not_obese_data <- read.csv(
 
 ## Figure 1
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 graphical_analysis_fig1 <- readRDS(
   here::here("output/graphical_analysis_fig1.rds")
 )
 graphical_analysis_fig1
 ```
 
+This figure shows the age density distribution by gender. The x-axis represents age, and the y-axis represents density. The orange color represents females, and the pink color represents males. The age density distribution is right-skewed, meaning most of the samples are in the younger age range, and the density decreases as age increases. This indicates that there are more young people in the data, and the number of samples decreases as age goes up. In the younger age range (about 0 to 25 years) and the older age range (about 75 years and above), the density difference between males and females is small. In the middle age range (25-60 years), the density for females is slightly higher than for males, especially around 20 to 40 years, suggesting that there are relatively more females in this age range. Both males and females have the highest density around age 20, which is the age range with the most concentration in the data.
+
 ## Figure 2
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 graphical_analysis_fig2 <- readRDS(
   here::here("output/graphical_analysis_fig2.rds")
 )
 graphical_analysis_fig2
 ```
+
+This figure shows the age distribution by COVID test findings (Classification) and gender. Classifications 1 to 3 indicate different degrees of COVID diagnosis, while 4 or higher means non-COVID or inconclusive results. For COVID-positive cases (1 to 3), both genders have similar age distributions with median ages around 50, except for classification 2, where males show a slightly higher median age and wider age range, suggesting a higher representation of older males in moderate COVID cases. In non-COVID or inconclusive cases (4 to 7), the age distribution is similar for both genders, indicating no significant age difference between males and females in these groups.
 
 ## Figure 3
 
@@ -61,6 +100,8 @@ graphical_analysis_fig3 <- readRDS(
 )
 graphical_analysis_fig3
 ```
+
+This stacked bar chart shows the distribution of obesity status across different COVID classifications. From the chart, we see that classifications 3 and 6 have the highest counts. In these groups, most individuals are non-obese (yellow). Obese individuals (pink) are present in all classifications, but in lower numbers compared to non-obese individuals. Among COVID-positive classifications (1 to 3), there are relatively fewer individuals, and most are also non-obese. Missing data (gray) is minimal across all classifications.
 
 
 # Modeling

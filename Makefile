@@ -31,7 +31,7 @@ output/aic_results.rds: code/03_modeling.R
 
 .PHONY: clean install
 clean:
-	rm -f final_report.html && rm -f output/*.png $$ rm -f output/*.rds
+	rm -f midterm_report.html && rm -f output/*.png $$ rm -f output/*.rds
 	
 install:
   Rscript -e "renv::restore(prompt=FALSE)"
